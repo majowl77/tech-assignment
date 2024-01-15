@@ -1,16 +1,23 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 
-export default function SortingComponent() {
+import { postsActions } from "../../redux/slices/postsSlice";
+import { AppDispatch } from "../../redux/store";
+
+export default function PerPageMenu() {
+  const dispatch = useDispatch<AppDispatch>();
   const [openDropdown, setOpenDropdown] = useState<boolean>(false);
 
-  const handleSorting = (sortValue: string) => {
+  const handleSelectingPerPage = (perPageValue: number) => {
+    console.log("🚀 ~ handleSelectingPerPage ~ perPageValue:", perPageValue);
+    dispatch(postsActions.getPerPageNumber(perPageValue));
     setOpenDropdown(false);
   };
   return (
     <div className="relative">
       <div className="inline-flex items-center overflow-hidden rounded-md border bg-white">
         <p className="border-e px-4 py-2 text-sm/none text-gray-600 hover:bg-gray-50 hover:text-gray-700">
-          Sort
+          Posts Per Page
         </p>
 
         <button
@@ -40,15 +47,35 @@ export default function SortingComponent() {
         <button
           className="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-500 hover:text-white"
           role="menuItem"
-          onClick={() => handleSorting("asc")}>
-          from A to Z
+          onClick={() => handleSelectingPerPage(5)}>
+          5
         </button>
 
         <button
           className="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-500 hover:text-white"
           role="menuItem"
-          onClick={() => handleSorting("desc")}>
-          from Z to A
+          onClick={() => handleSelectingPerPage(10)}>
+          10
+        </button>
+
+        <button
+          className="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-500 hover:text-white"
+          role="menuItem"
+          onClick={() => handleSelectingPerPage(15)}>
+          15
+        </button>
+
+        <button
+          className="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-500 hover:text-white"
+          role="menuItem"
+          onClick={() => handleSelectingPerPage(20)}>
+          20
+        </button>
+        <button
+          className="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-500 hover:text-white"
+          role="menuItem"
+          onClick={() => handleSelectingPerPage(25)}>
+          25
         </button>
       </div>
     </div>

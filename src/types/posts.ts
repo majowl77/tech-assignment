@@ -1,5 +1,3 @@
-import { tableHeaders } from "../components/postsTable/PostsTable";
-
 export type Post = {
   userId: number;
   id: number;
@@ -11,7 +9,8 @@ export type PostsInitialState = {
   postsList: Post[];
   isLoading: boolean;
   error: null | string;
-  userPosts: Post[];
+  singlePost: Post | null;
+  perPage: number;
 };
 
 export type TableHeaders = {

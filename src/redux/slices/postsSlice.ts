@@ -1,7 +1,8 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-// import { AxiosError } from "axios";
+
 import { Post, PostsInitialState } from "../../types/posts";
 
+//fetching all the post
 export const getPostsThunk = createAsyncThunk(
   "posts/fetchAllPosts",
   async () => {
@@ -17,12 +18,13 @@ export const getPostsThunk = createAsyncThunk(
   }
 );
 
+//fetching single post by id
 export const getSingleUserPostsThunk = createAsyncThunk(
   "userPosts/fetchAllUserPosts",
-  async (userId: Post["userId"]) => {
+  async (Id: Post["id"]) => {
     try {
       const response = await fetch(
-        "https://jsonplaceholder.typicode.com/posts"
+        `https://jsonplaceholder.typicode.com/posts/${Id}`
       );
       const data = response.json();
       return data;
@@ -36,15 +38,16 @@ const initialState: PostsInitialState = {
   postsList: [],
   isLoading: false,
   error: null,
-  userPosts: [],
+  singlePost: null,
+  perPage: 5,
 };
 
 const postsSlice = createSlice({
   name: "users",
   initialState: initialState,
   reducers: {
-    getError: (state, action: PayloadAction<string>) => {
-      state.error = action.payload;
+    getPerPageNumber: (state, action: PayloadAction<number>) => {
+      state.perPage = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -53,10 +56,6 @@ const postsSlice = createSlice({
     });
     builder.addCase(getPostsThunk.rejected, (state, action) => {
       const errorMsg = action.error.message;
-      console.log(
-        "🚀 ~ builder.addCase ~ action.error.message:",
-        action.error.message
-      );
       if (typeof errorMsg === "string") {
         state.error = errorMsg;
       } else {
@@ -75,10 +74,7 @@ const postsSlice = createSlice({
     });
     builder.addCase(getSingleUserPostsThunk.rejected, (state, action) => {
       const errorMsg = action.error.message;
-      console.log(
-        "🚀 ~ builder.addCase ~ action.error.message:",
-        action.error.message
-      );
+
       if (typeof errorMsg === "string") {
         state.error = errorMsg;
       } else {
@@ -88,8 +84,7 @@ const postsSlice = createSlice({
       return state;
     });
     builder.addCase(getSingleUserPostsThunk.fulfilled, (state, action) => {
-      state.userPosts = action.payload;
-      console.log("🚀 ~ builder.addCase ~  action.payload:", action.payload);
+      state.singlePost = action.payload;
       state.isLoading = false;
       return state;
     });
