@@ -114,8 +114,9 @@ export default function PostsTable() {
         onClick={() => handlePageChange(pageNumber)}
         type="button"
         className={
-          "w-full px-4 py-2 text-base text-gray-600 bg-white border hover:bg-gray-100" +
-          (pageNumber === currentPage ? " bg-indigo-200" : "")
+          pageNumber === currentPage
+            ? "w-full px-4 py-2 text-base text-gray-600 bg-indigo-200 border hover:bg-gray-100"
+            : "w-full px-4 py-2 text-base text-gray-600 bg-white border hover:bg-gray-100"
         }>
         {pageNumber}
       </button>
@@ -197,10 +198,9 @@ export default function PostsTable() {
             onClick={handlePreviosePage}
             disabled={currentPage === 1}
             className={
-              "w-full p-4 text-base text-gray-600 bg-white border rounded-l-xl hover:bg-gray-100" +
-              (currentPage === 1
-                ? " cursor-not-allowed bg-gray-300 text-gray-400 hover:bg-gray-200"
-                : "")
+              currentPage === 1
+                ? "cursor-not-allowed w-full p-4 text-base text-gray-400 bg-gray-300 border rounded-l-xl hover:bg-gray-200"
+                : "w-full p-4 text-base text-gray-600 bg-white border rounded-l-xl hover:bg-gray-100"
             }>
             <svg
               width="9"
@@ -218,10 +218,9 @@ export default function PostsTable() {
             onClick={handleNextPage}
             disabled={currentPage === totalNumberOfPages}
             className={
-              "w-full p-4 text-base text-gray-600 bg-white border-t border-b border-r rounded-r-xl hover:bg-gray-100" +
-              (currentPage === totalNumberOfPages
-                ? " cursor-not-allowed bg-gray-300 hover:bg-gray-200 text-gray-300"
-                : "")
+              currentPage === totalNumberOfPages
+                ? "cursor-not-allowed w-full p-4 text-base text-gray-400 bg-gray-300 border-t border-b border-r rounded-r-xl hover:bg-gray-200"
+                : "w-full p-4 text-base text-gray-600 bg-white border-t border-b border-r rounded-r-xl hover:bg-gray-100"
             }>
             <svg
               width="9"
