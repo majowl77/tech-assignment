@@ -4548,6 +4548,11 @@ etag@~1.8.1:
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
   integrity sha512-aIL5Fx7mawVa300al2BnEE4iNvo1qETxLrPI/o05L7z6go7fCw1J6EQmbK4FmJ2AS7kgVF/KEZWufBfdClMcPg==
 
+event-state@^0.3.5:
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/event-state/-/event-state-0.3.5.tgz#fae0ec7140f1df734d2b80be1015a90e028d6ca9"
+  integrity sha512-OrVJLWN7f5o3hAgzo9xA4/J99iK+R58Ms7SfaY0YnXWxaHqt3hSO4RSGCnZRBHois+dXkY3tNJgNmcBJ52Wycg==
+
 eventemitter3@^4.0.0:
   version "4.0.7"
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-4.0.7.tgz#2de9b68f6528d5644ef5c59526a1b4a07306169f"
@@ -6601,6 +6606,13 @@ makeerror@1.0.12:
   integrity sha512-JmqCvUhmt43madlpFzG4BQzG2Z3m6tvQDNKdClZnO3VbIudJYmxsT0FNJMeiB2+JTSlTQTSbU8QdesVmwJcmLg==
   dependencies:
     tmpl "1.0.5"
+
+md-file-tree@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/md-file-tree/-/md-file-tree-0.2.0.tgz#3bcebcc6276e905d8447cb9aacad5fb22ecc4d96"
+  integrity sha512-dbuE5d6nG0UPbvUBMoJth/AK1154ZvGubUxd391Mc7JvKtVx8YxKD8dv1nOYFSOxGm/xxDUJBLVxnqqwDOhj1Q==
+  dependencies:
+    event-state "^0.3.5"
 
 mdn-data@2.0.14:
   version "2.0.14"

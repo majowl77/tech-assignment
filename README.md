@@ -1,39 +1,74 @@
-# Getting Started with Create React App
+# Posts Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A web page that presents posts in a tabular format using the JSONPlaceholder API.\
+This project is built using the following technologies:
 
-## Available Scripts
+- **React**: A JavaScript library for building user interfaces.
+- **Redux**: A predictable state container for JavaScript applications.
+- **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
 
-In the project directory, you can run:
+## Table of Contents
 
-### `yarn start`
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+- [How to Contribute](#how-to-contribute)
+- [License](#license)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Introduction
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+This project is a web page that displays posts in a tabular format. Users can interact with the table by paginating through the records, sorting each column, and selecting a specific user to view their posts.Furthermore, users have the ability to click on individual posts to access detailed information, enhancing the overall exploration of the displayed content.
 
-### `yarn test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Retrieving Posts:**
 
-### `yarn build`
+  - Utilize the [JSONPlaceholder](https://jsonplaceholder.typicode.com/) API to fetch a list of posts.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Display Tabular Format:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  - Present posts in a clear tabular format.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Tabular View Columns:**
 
-### `yarn eject`
+  - Create a tabular view with columns: User Id, Title, and Body.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- **Frontend Pagination:**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single
+  - Implement frontend pagination, allowing users to choose between 5, 10, 15, 20, or 25 records per page.
+
+- **Column Sorting:**
+
+  - Enable sorting of table columns in both ascending and descending order.
+
+- **Select Specific User:**
+
+  - Provide users with the ability to select a specific user, retrieving and displaying all the posts for the chosen user.
+
+- **Detailed Post Information:**
+  - Explore detailed information for each post by initiating an API call to `https://jsonplaceholder.typicode.com/posts/{userId}`.
+
+## Installation
+
+1. Clone the repository.
+2. Run `npm install` or `yarn install` to install dependencies.
+3. Start the development server with `npm start` or `yarn start`.
+
+## How to Contribute
+
+If you'd like to contribute, please follow these guidelines:
+
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature-name`.
+3. Make your changes.
+4. Push your branch: `git push origin feature-name`.
+5. Create a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+![Build Status](https://travis-ci.org/majowl77/tech-assignment.svg?branch=main)
 
 ## Created by
 
