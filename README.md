@@ -1,6 +1,6 @@
 # Posts Web App
 
-A web page that presents posts in a tabular format using the JSONPlaceholder API.\
+A web page that presents posts in a tabular format using the [JSONPlaceholder](https://jsonplaceholder.typicode.com/) API.\
 This project is built using the following technologies:
 
 - **React**: A JavaScript library for building user interfaces.
@@ -13,7 +13,6 @@ This project is built using the following technologies:
 - [Features](#features)
 - [Installation](#installation)
 - [How to Contribute](#how-to-contribute)
-- [License](#license)
 
 ## Introduction
 
@@ -63,12 +62,6 @@ If you'd like to contribute, please follow these guidelines:
 3. Make your changes.
 4. Push your branch: `git push origin feature-name`.
 5. Create a pull request.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
-![Build Status](https://travis-ci.org/majowl77/tech-assignment.svg?branch=main)
 
 ## Created by
 
