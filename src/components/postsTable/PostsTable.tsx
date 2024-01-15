@@ -9,9 +9,9 @@ import { Post, TableHeaders } from "../../types/posts";
 import Spinner from "../spinner/Spinner";
 
 export const tableHeaders = [
-  { id: 1, key: "userId", lable: "User Id" },
-  { id: 2, key: "title", lable: "Title" },
-  { id: 3, key: "body", lable: "Body" },
+  { id: 1, key: "userId", label: "User Id" },
+  { id: 2, key: "title", label: "Title" },
+  { id: 3, key: "body", label: "Body" },
 ];
 
 export default function PostsTable() {
@@ -113,9 +113,10 @@ export default function PostsTable() {
         key={pageNumber}
         onClick={() => handlePageChange(pageNumber)}
         type="button"
-        className={`w-full px-4 py-2 text-base text-gray-600 bg-white border hover:bg-gray-100 ${
-          pageNumber === currentPage ? " bg-indigo-100 " : ""
-        }`}>
+        className={
+          "w-full px-4 py-2 text-base text-gray-600 bg-white border hover:bg-gray-100" +
+          (pageNumber === currentPage ? " bg-indigo-200" : "")
+        }>
         {pageNumber}
       </button>
     ));
@@ -140,7 +141,7 @@ export default function PostsTable() {
                     onClick={() => handleTableHeaderClick(header)}
                     scope="col"
                     className="px-5 py-3 text-sm font-normal text-left text-gray-800 uppercase bg-white border-b border-gray-200">
-                    {header.lable}
+                    {header.label}
 
                     {sort.headerToSort === header.key && (
                       <span className="px-4">
@@ -198,7 +199,7 @@ export default function PostsTable() {
             className={
               "w-full p-4 text-base text-gray-600 bg-white border rounded-l-xl hover:bg-gray-100" +
               (currentPage === 1
-                ? " cursor-not-allowed bg-gray-200 hover:bg-gray-200 text-gray-300"
+                ? " cursor-not-allowed bg-gray-300 text-gray-400 hover:bg-gray-200"
                 : "")
             }>
             <svg
@@ -219,7 +220,7 @@ export default function PostsTable() {
             className={
               "w-full p-4 text-base text-gray-600 bg-white border-t border-b border-r rounded-r-xl hover:bg-gray-100" +
               (currentPage === totalNumberOfPages
-                ? "cursor-not-allowed bg-gray-200 hover:bg-gray-200 text-gray-300"
+                ? " cursor-not-allowed bg-gray-300 hover:bg-gray-200 text-gray-300"
                 : "")
             }>
             <svg

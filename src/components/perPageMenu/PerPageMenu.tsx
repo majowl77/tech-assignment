@@ -9,13 +9,12 @@ export default function PerPageMenu() {
   const [openDropdown, setOpenDropdown] = useState<boolean>(false);
 
   const handleSelectingPerPage = (perPageValue: number) => {
-    console.log("🚀 ~ handleSelectingPerPage ~ perPageValue:", perPageValue);
     dispatch(postsActions.getPerPageNumber(perPageValue));
     setOpenDropdown(false);
   };
   return (
     <div className="relative">
-      <div className="inline-flex items-center overflow-hidden rounded-md border bg-white">
+      <div className="inline-flex items-center overflow-hidden rounded-md border bg-white hover:bg-gray-50 hover:text-gray-700">
         <p className="border-e px-4 py-2 text-sm/none text-gray-600 hover:bg-gray-50 hover:text-gray-700">
           Posts Per Page
         </p>
@@ -37,46 +36,21 @@ export default function PerPageMenu() {
           </svg>
         </button>
       </div>
-
       <div
         className={
           "absolute start-0 z-10 mt-2 w-36 px-2 py-2 rounded-md border border-gray-100 bg-white shadow-lg" +
           (openDropdown ? "" : " hidden")
         }
         role="menu">
-        <button
-          className="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-500 hover:text-white"
-          role="menuItem"
-          onClick={() => handleSelectingPerPage(5)}>
-          5
-        </button>
-
-        <button
-          className="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-500 hover:text-white"
-          role="menuItem"
-          onClick={() => handleSelectingPerPage(10)}>
-          10
-        </button>
-
-        <button
-          className="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-500 hover:text-white"
-          role="menuItem"
-          onClick={() => handleSelectingPerPage(15)}>
-          15
-        </button>
-
-        <button
-          className="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-500 hover:text-white"
-          role="menuItem"
-          onClick={() => handleSelectingPerPage(20)}>
-          20
-        </button>
-        <button
-          className="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-500 hover:text-white"
-          role="menuItem"
-          onClick={() => handleSelectingPerPage(25)}>
-          25
-        </button>
+        {Array.from({ length: 5 }, (_, index) => (
+          <button
+            key={index}
+            className="block rounded-lg px-4 py-2 w-32 text-sm text-start text-gray-500 hover:bg-gray-400 hover:text-white"
+            role="menuItem"
+            onClick={() => handleSelectingPerPage((index + 1) * 5)}>
+            {(index + 1) * 5}
+          </button>
+        ))}
       </div>
     </div>
   );

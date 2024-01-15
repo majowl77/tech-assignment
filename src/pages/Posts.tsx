@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
 import PostsTable from "../components/postsTable/PostsTable";
 import { getPostsThunk } from "../redux/slices/postsSlice";
-import { AppDispatch, RootState } from "../redux/store";
+import { AppDispatch } from "../redux/store";
 import PerPageMenu from "../components/perPageMenu/PerPageMenu";
 
 export default function Post() {

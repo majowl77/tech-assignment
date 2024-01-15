@@ -43,7 +43,7 @@ const initialState: PostsInitialState = {
 };
 
 const postsSlice = createSlice({
-  name: "users",
+  name: "posts",
   initialState: initialState,
   reducers: {
     getPerPageNumber: (state, action: PayloadAction<number>) => {

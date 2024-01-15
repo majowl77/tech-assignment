@@ -15,10 +15,10 @@ export default function PostDetails() {
     (state: RootState) => state.postsReducer.singlePost
   );
   useEffect(() => {
-    const handleGetProducts = async () => {
+    const handleGetPosts = async () => {
       dispatch(getSingleUserPostsThunk(Number(Id)));
     };
-    handleGetProducts();
+    handleGetPosts();
   }, []);
 
   return (

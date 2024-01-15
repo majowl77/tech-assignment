@@ -16,5 +16,5 @@ export type PostsInitialState = {
 export type TableHeaders = {
   id: number;
   key: string;
-  lable: string;
+  label: string;
 };
